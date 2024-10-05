@@ -9,8 +9,6 @@
 		"url": "https://github.com/accuser"
 	},
 	"keywords": [
-		"code",
-		"markdown",
 		"hast",
 		"svelte",
 		"sveltekit"
