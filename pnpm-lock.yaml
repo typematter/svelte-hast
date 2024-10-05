@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@accuser/svelte-unist':
-        specifier: ^0.1.0
-        version: 0.1.0(svelte@5.0.0-next.260)
+        specifier: ^0.3.1
+        version: 0.3.1(svelte@5.0.0-next.260)
       '@types/hast':
         specifier: ^3.0.4
         version: 3.0.4
@@ -93,8 +93,8 @@ importers:
 
 packages:
 
-  '@accuser/svelte-unist@0.1.0':
-    resolution: {integrity: sha512-BK1Wi6Y409s99QzciMAQvuOG+qRxd82b6YAQFrT9A5jvPABgw9xjsKmxXCZg+aDIwr16K0mwpGmMU2vSjjqyVQ==}
+  '@accuser/svelte-unist@0.3.1':
+    resolution: {integrity: sha512-Ghp+74QK4p2WmHR7wQrumk9uAqP1YnZ0gHnLkVGQFWyKK7EVF3a+enYNnrVX0/kicbi5ZrXPBz/K4iQNqy+UGQ==}
     peerDependencies:
       svelte: ^5.0.0-next.1
 
@@ -1549,7 +1549,7 @@ packages:
 
 snapshots:
 
-  '@accuser/svelte-unist@0.1.0(svelte@5.0.0-next.260)':
+  '@accuser/svelte-unist@0.3.1(svelte@5.0.0-next.260)':
     dependencies:
       '@accuser/unist-util-type-guards': 1.1.0(@types/unist@3.0.3)
       '@types/unist': 3.0.3
