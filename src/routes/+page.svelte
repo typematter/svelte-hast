@@ -1,12 +1,10 @@
 <script lang="ts">
 	import Hast from '$lib/components/Hast.svelte';
-	import type { PageData } from './$types.js';
+	import { u } from 'unist-builder';
 
-	let { data }: { data: PageData } = $props();
-
-	let { ast } = $derived(data);
+	const ast: import('hast').Root = u('root', [
+		u('element', { tagName: 'h1', properties: {} }, [u('text', 'Hello, World!')])
+	]);
 </script>
 
-<article class="prose prose-lg max-w-prose mx-auto prose-slate dark:prose-invert">
-	<Hast {ast} />
-</article>
+<Hast {ast} />
