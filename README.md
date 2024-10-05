@@ -1,49 +1,40 @@
-# Svelte Markdown Provider
+# Svelte Hast
 
-Transforms Markdown source (as a `string`) or a [Markdown AST](https://github.com/syntax-tree/mdast) into Svelte components.
-
-> [!NOTE]
-> You probably don't want this - look at [mdsvex](https://mdsvex.pngwn.io) or [svelte-markdown](https://github.com/pablo-abc/svelte-markdown) instead.
+Transform [Hast](https://github.com/syntax-tree/hast) into Svelte components.
 
 ## Installing
 
-Add the `@accuser/svelte-markdown-provider` package dependency to your [Svelte](https://svelte.dev) / [SvelteKit](https://kit.svelte.dev) project:
+Add the `@accuser/svelte-hast` package dependency to your [Svelte](https://svelte.dev) / [SvelteKit](https://kit.svelte.dev) project:
 
 ```sh
-npm install --save-dev @accuser/svelte-markdown-provider
+npm install --save-dev @accuser/svelte-hast
 ```
 
 ## Usage
 
-### Markdown `string`
-
 ```svelte
-<script>
-    import { Markdown } from '@accuser/svelte-markdown-provider';
+<script lang="ts">
+	import Hast from '@accuser/svelte-hast';
+	import { u } from 'unist-builder';
 
-    const source = 'Hello, World!';
+	const ast: import('hast').Root = u('root', [
+		u('element', { tagName: 'h1', properties: {} }, [u('text', 'Hello, World!')])
+	]);
 </script>
 
-<Markdown {src} />
+<Hast {ast} />
 ```
 
-### Markdown AST
+## Test
 
-```svelte
-<script>
-    import { Markdown } from '@accuser/svelte-markdown-provider';
-
-    const ast = {
-        type: 'root',
-        children: [{
-           type: 'paragraph',
-           children: [{
-                type: 'text',
-                value: 'Hello, World!'
-            }]
-        }]
-    };
-</script>
-
-<Markdown {ast} />
+```sh
+npm test
 ```
+
+## License
+
+[MIT](LICENSE)
+
+## Copyright
+
+Copyrigth &copy; 2024 [Matthew Gibbons](https://github.com/accuser)
