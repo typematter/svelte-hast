@@ -4,14 +4,21 @@ import Element from '$lib/components/Element.svelte';
 import Root from '$lib/components/Root.svelte';
 import Text from '$lib/components/Text.svelte';
 import type { Components } from '@accuser/svelte-unist';
-import type { Node, Nodes } from 'hast';
 
-const components: Components<Nodes> = {
+declare module '@accuser/svelte-unist' {
+	export interface NodeMap {
+		comment: import('hast').Comment;
+		doctype: import('hast').Doctype;
+		element: import('hast').Element;
+		root: import('hast').Root;
+		text: import('hast').Text;
+	}
+}
+
+export default {
 	comment: Comment,
 	doctype: Doctype,
 	element: Element,
 	root: Root,
 	text: Text
-};
-
-export default components as Components<Node>;
+} satisfies Components;
