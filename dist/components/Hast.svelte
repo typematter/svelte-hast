@@ -1,13 +1,8 @@
 <script lang="ts">
-	import defaultComponents from '../defaults/default-components.js';
-	import { Unist, setUnistContext } from '@accuser/svelte-unist';
+	import hastComponents from '../defaults/hast-components.js';
+	import { Unist, type UnistContext } from '@accuser/svelte-unist';
 
-	let {
-		ast,
-		...context
-	}: { ast: import('hast').Root } & Partial<ReturnType<typeof setUnistContext>> = $props();
-
-	setUnistContext({ ...context, components: { ...defaultComponents, ...context.components } });
+	let { ast, components, ...rest }: { ast: import('hast').Root } & UnistContext = $props();
 </script>
 
-<Unist {ast} />
+<Unist {ast} components={{ ...hastComponents, ...components }} {...rest} />

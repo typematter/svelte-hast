@@ -3,11 +3,10 @@ import Doctype from '../components/Doctype.svelte';
 import Element from '../components/Element.svelte';
 import Root from '../components/Root.svelte';
 import Text from '../components/Text.svelte';
-const components = {
+export default {
     comment: Comment,
     doctype: Doctype,
     element: Element,
     root: Root,
     text: Text
 };
-export default components;
