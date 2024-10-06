@@ -1,5 +1,5 @@
 declare module '@accuser/svelte-unist' {
-    interface NodeMap {
+    interface ComponentMap {
         comment: import('hast').Comment;
         doctype: import('hast').Doctype;
         element: import('hast').Element;

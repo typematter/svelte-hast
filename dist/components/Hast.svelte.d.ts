@@ -1,5 +1,5 @@
-import { type UnistProps } from '@accuser/svelte-unist';
+import { type Props } from '@accuser/svelte-unist';
 declare const Hast: import("svelte").Component<{
     ast: import("hast").Root;
-} & UnistProps, {}, "">;
+} & Props, {}, "">;
 export default Hast;
