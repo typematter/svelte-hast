@@ -6,7 +6,7 @@ import Text from '$lib/components/Text.svelte';
 import type { Components } from '@accuser/svelte-unist';
 
 declare module '@accuser/svelte-unist' {
-	export interface NodeMap {
+	export interface ComponentMap {
 		comment: import('hast').Comment;
 		doctype: import('hast').Doctype;
 		element: import('hast').Element;
