@@ -8,10 +8,9 @@ declare module '@accuser/svelte-unist' {
     }
 }
 import * as Unist from '@accuser/svelte-unist';
-import type { ComponentProps } from 'svelte';
 type $$ComponentProps = {
     ast: import('hast').Root;
-} & ComponentProps<typeof Unist.Root>;
+} & Unist.UnistContext;
 declare const Hast: import("svelte").Component<$$ComponentProps, {}, "">;
 type Hast = ReturnType<typeof Hast>;
 export default Hast;

@@ -12,18 +12,15 @@
 
 <script lang="ts">
 	import * as Unist from '@accuser/svelte-unist';
-	import type { ComponentProps } from 'svelte';
 	import Comment from './comment.svelte';
 	import Doctype from './doctype.svelte';
 	import Element from './element.svelte';
 	import Root from './root.svelte';
 	import Text from './text.svelte';
 
-	let {
-		ast,
-		components,
-		...rest
-	}: { ast: import('hast').Root } & ComponentProps<typeof Unist.Root> = $props();
+	let { ast, ...context }: { ast: import('hast').Root } & Unist.UnistContext = $props();
+
+	let { components = {}, ...rest } = $derived(context);
 
 	const defaultComponents = {
 		comment: Comment,
@@ -34,4 +31,4 @@
 	} satisfies Unist.Components;
 </script>
 
-<Unist.Root {ast} components={{ ...defaultComponents, ...components }} {...rest} />
+<Unist.Root {ast} components={{ ...defaultComponents, ...components }} {test} {...rest} />
