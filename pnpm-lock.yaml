@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@accuser/svelte-unist':
         specifier: github:accuser/svelte-unist
-        version: https://codeload.github.com/accuser/svelte-unist/tar.gz/2a86355e24ed461d2d58548f1c1100abd89ccc53(@types/unist@3.0.3)(svelte@5.39.11)
+        version: https://codeload.github.com/accuser/svelte-unist/tar.gz/72337a7b73e88a629e4e7b19b223c028e9efc464(@types/unist@3.0.3)(svelte@5.39.11)
       '@sveltejs/adapter-auto':
         specifier: ^6.1.1
         version: 6.1.1(@sveltejs/kit@2.46.4(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.39.11)(vite@7.1.9(@types/node@24.7.0)(jiti@2.3.1)))(svelte@5.39.11)(vite@7.1.9(@types/node@24.7.0)(jiti@2.3.1)))
@@ -92,8 +92,8 @@ importers:
 
 packages:
 
-  '@accuser/svelte-unist@https://codeload.github.com/accuser/svelte-unist/tar.gz/2a86355e24ed461d2d58548f1c1100abd89ccc53':
-    resolution: {tarball: https://codeload.github.com/accuser/svelte-unist/tar.gz/2a86355e24ed461d2d58548f1c1100abd89ccc53}
+  '@accuser/svelte-unist@https://codeload.github.com/accuser/svelte-unist/tar.gz/72337a7b73e88a629e4e7b19b223c028e9efc464':
+    resolution: {tarball: https://codeload.github.com/accuser/svelte-unist/tar.gz/72337a7b73e88a629e4e7b19b223c028e9efc464}
     version: 0.5.0
     peerDependencies:
       svelte: ^5.39.11
@@ -1397,11 +1397,11 @@ packages:
     resolution: {integrity: sha512-azl+t0z7pw/z958Gy9svOTuzqIk6xq+NSheJzn5MMWtWTFywIacg2wUlzKFGtt3cthx0r2SxMK0yzJOR0IES7Q==}
     engines: {node: '>=14.0.0'}
 
-  tldts-core@7.0.16:
-    resolution: {integrity: sha512-XHhPmHxphLi+LGbH0G/O7dmUH9V65OY20R7vH8gETHsp5AZCjBk9l8sqmRKLaGOxnETU7XNSDUPtewAy/K6jbA==}
+  tldts-core@7.0.17:
+    resolution: {integrity: sha512-DieYoGrP78PWKsrXr8MZwtQ7GLCUeLxihtjC1jZsW1DnvSMdKPitJSe8OSYDM2u5H6g3kWJZpePqkp43TfLh0g==}
 
-  tldts@7.0.16:
-    resolution: {integrity: sha512-5bdPHSwbKTeHmXrgecID4Ljff8rQjv7g8zKQPkCozRo2HWWni+p310FSn5ImI+9kWw9kK4lzOB5q/a6iv0IJsw==}
+  tldts@7.0.17:
+    resolution: {integrity: sha512-Y1KQBgDd/NUc+LfOtKS6mNsC9CCaH+m2P1RoIZy7RAPo3C3/t8X45+zgut31cRZtZ3xKPjfn3TkGTrctC2TQIQ==}
     hasBin: true
 
   to-regex-range@5.0.1:
@@ -1604,7 +1604,7 @@ packages:
 
 snapshots:
 
-  '@accuser/svelte-unist@https://codeload.github.com/accuser/svelte-unist/tar.gz/2a86355e24ed461d2d58548f1c1100abd89ccc53(@types/unist@3.0.3)(svelte@5.39.11)':
+  '@accuser/svelte-unist@https://codeload.github.com/accuser/svelte-unist/tar.gz/72337a7b73e88a629e4e7b19b223c028e9efc464(@types/unist@3.0.3)(svelte@5.39.11)':
     dependencies:
       '@accuser/unist-util-type-guards': 1.1.0(@types/unist@3.0.3)
       svelte: 5.39.11
@@ -2855,11 +2855,11 @@ snapshots:
 
   tinyspy@4.0.4: {}
 
-  tldts-core@7.0.16: {}
+  tldts-core@7.0.17: {}
 
-  tldts@7.0.16:
+  tldts@7.0.17:
     dependencies:
-      tldts-core: 7.0.16
+      tldts-core: 7.0.17
 
   to-regex-range@5.0.1:
     dependencies:
@@ -2869,7 +2869,7 @@ snapshots:
 
   tough-cookie@6.0.0:
     dependencies:
-      tldts: 7.0.16
+      tldts: 7.0.17
 
   tr46@6.0.0:
     dependencies:
