@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Hast from '$lib/components/hast/index.js';
+	import { Hast } from '$lib/components/index.js';
 	import { u } from 'unist-builder';
 
 	const ast: import('hast').Root = u('root', [
@@ -7,4 +7,4 @@
 	]);
 </script>
 
-<Hast.Root {ast} />
+<Hast {ast} />
