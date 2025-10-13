@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Hast } from '$lib/components/index.js';
+	import { defaultComponents } from '$lib/index.js';
+	import { Unist } from '@accuser/svelte-unist';
 	import { u } from 'unist-builder';
 
 	const ast: import('hast').Root = u('root', [
@@ -7,4 +8,4 @@
 	]);
 </script>
 
-<Hast {ast} />
+<Unist {ast} components={defaultComponents} />
