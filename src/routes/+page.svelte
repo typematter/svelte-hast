@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { defaultComponents } from '$lib/index.js';
+	import * as Hast from '$lib/index.js';
 	import { Unist } from '@accuser/svelte-unist';
 	import { u } from 'unist-builder';
 
@@ -8,4 +8,4 @@
 	]);
 </script>
 
-<Unist {ast} components={defaultComponents} />
+<Unist {ast} components={Hast.components} />
