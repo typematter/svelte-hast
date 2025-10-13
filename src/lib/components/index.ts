@@ -14,7 +14,7 @@ declare module '@accuser/svelte-unist' {
 	}
 }
 
-export const defaultHastComponents = {
+export const components = {
 	comment: Comment,
 	doctype: Doctype,
 	element: Element,
