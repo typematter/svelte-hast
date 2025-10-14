@@ -1,6 +1,6 @@
 {
-	"name": "@accuser/svelte-hast",
-	"version": "0.3.0",
+	"name": "@typematter/svelte-hast",
+	"version": "1.0.0",
 	"private": false,
 	"license": "MIT",
 	"author": {
@@ -13,13 +13,13 @@
 		"svelte",
 		"sveltekit"
 	],
-	"homepage": "https://github.com/accuser/svelte-hast",
+	"homepage": "https://github.com/typematter/svelte-hast",
 	"bugs": {
-		"url": "https://github.com/accuser/svelte-hast/issues"
+		"url": "https://github.com/typematter/svelte-hast/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/accuser/svelte-hast.git"
+		"url": "git+https://github.com/typematter/svelte-hast.git"
 	},
 	"scripts": {
 		"dev": "vite dev",
