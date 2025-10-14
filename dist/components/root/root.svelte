@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Node } from '@accuser/svelte-unist';
+	import { Node } from '@typematter/svelte-unist';
 
 	let { node }: { node: import('hast').Root } = $props();
 
