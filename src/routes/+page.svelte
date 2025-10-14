@@ -1,11 +1,11 @@
 <script lang="ts">
-	import * as Hast from '$lib/index.js';
-	import { Unist } from '@accuser/svelte-unist';
-	import { u } from 'unist-builder';
+	import { components } from '$lib/components/index.js';
+	import { Unist } from '@typematter/svelte-unist';
+	import type { PageProps } from './$types.js';
 
-	const ast: import('hast').Root = u('root', [
-		u('element', { tagName: 'h1', properties: {} }, [u('text', 'Hello, World!')])
-	]);
+	let { data }: PageProps = $props();
+
+	let { ast } = $derived(data);
 </script>
 
-<Unist {ast} components={Hast.components} />
+<Unist {ast} {components} />
