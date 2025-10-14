@@ -1,4 +1,4 @@
-declare module '@accuser/svelte-unist' {
+declare module '@typematter/svelte-unist' {
 	interface ComponentMap {
 		text: import('hast').Text;
 	}

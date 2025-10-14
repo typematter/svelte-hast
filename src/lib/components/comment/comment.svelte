@@ -4,4 +4,4 @@
 	let { value } = $derived(node);
 </script>
 
-{@html `<!--${value}-->`}
+{@html `<!-- ${value} -->`}

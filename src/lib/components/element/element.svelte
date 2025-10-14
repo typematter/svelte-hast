@@ -1,11 +1,14 @@
 <script lang="ts">
-	import { Node } from '@accuser/svelte-unist';
+	import { Node } from '@typematter/svelte-unist';
 	import type { Properties } from 'hast';
 
 	let { node }: { node: import('hast').Element } = $props();
 
 	let { children, content, properties, tagName } = $derived(node);
-	let { className, ...rest } = $derived(properties as Properties & { className: string });
+
+	let { className, ...rest } = $derived(
+		(properties as Properties & { className?: string | null }) || {}
+	);
 </script>
 
 <svelte:element this={tagName} class={className} {...rest}
