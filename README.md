@@ -20,15 +20,17 @@ pnpm add --save-dev @accuser/svelte-hast
 
 ```svelte
 <script lang="ts">
-	import { Hast } from '@accuser/svelte-hast';
+	import { components } from '@accuser/svelte-hast';
+	import { Unist } from '@typematter/svelte-unist';
+	import type { PageProps } from './$types.js';
 	import { u } from 'unist-builder';
 
-	const ast: import('hast').Root = u('root', [
-		u('element', { tagName: 'h1', properties: {} }, [u('text', 'Hello, World!')])
-	]);
+	const ast = u('root', [
+        u('element', { tagName: 'h1' }, [u('text', 'Hello, World!')])
+    ])
 </script>
 
-<Hast {ast} />
+<Unist {ast} {components} />
 ```
 
 ## Test
