@@ -4,23 +4,23 @@ Transform [Hast](https://github.com/syntax-tree/hast) into Svelte components.
 
 ## Installing
 
-Add the `@accuser/svelte-hast` package dependency to your [Svelte](https://svelte.dev) / [SvelteKit](https://kit.svelte.dev) project:
+Add the `@typematter/svelte-hast` package dependency to your [Svelte](https://svelte.dev) / [SvelteKit](https://kit.svelte.dev) project:
 
 ```sh
-npm install --save-dev @accuser/svelte-hast
+npm install --save-dev @typematter/svelte-hast
 
 # or
-yarn add --dev @accuser/svelte-hast
+yarn add --dev @typematter/svelte-hast
 
 # or
-pnpm add --save-dev @accuser/svelte-hast
+pnpm add --save-dev @typematter/svelte-hast
 ```
 
 ## Usage
 
 ```svelte
 <script lang="ts">
-	import { components } from '@accuser/svelte-hast';
+	import { components } from '@typematter/svelte-hast';
 	import { Unist } from '@typematter/svelte-unist';
 	import type { PageProps } from './$types.js';
 	import { u } from 'unist-builder';
