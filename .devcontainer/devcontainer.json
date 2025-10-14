@@ -1,11 +1,9 @@
 {
-	"name": "Svelte Unist",
+	"name": "Svelte Hast",
 	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"bradlc.vscode-tailwindcss",
-				"cloudflare.cloudflare-workers-bindings-extension",
 				"dbaeumer.vscode-eslint",
 				"esbenp.prettier-vscode",
 				"ms-vscode.vscode-typescript-next",
