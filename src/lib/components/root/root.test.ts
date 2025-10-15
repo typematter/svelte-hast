@@ -1,4 +1,7 @@
+import '@typematter/svelte-unist';
+import { Unist } from '@typematter/svelte-unist';
 import { type ComponentProps, mount } from 'svelte';
+import { u } from 'unist-builder';
 import { beforeEach, describe, expect, test } from 'vitest';
 import Root from './root.svelte';
 
@@ -7,16 +10,15 @@ describe('Root', () => {
         document.body = document.createElement('body');
     });
 
-    const it = test.extend<{ props: ComponentProps<typeof Root> }>({
+    const it = test.extend<{ props: ComponentProps<typeof Unist> }>({
         props: {
-            node: {
-                type: 'root', children: [{ type: 'text', value: 'Hello, World!' }]
-            }
+            ast: u('root', [u('text', { value: 'Hello, World!' })]),
+            components: { root: Root }
         }
     });
 
     it('renders <div>Hello, World!</div>', ({ props }) => {
-        mount(Root, { props, target: document.body });
+        mount(Unist, { props, target: document.body });
 
         expect(document.body.innerHTML).toContain('Hello, World!');
     });
