@@ -1,4 +1,6 @@
+import { Unist } from '@typematter/svelte-unist';
 import { mount } from 'svelte';
+import { u } from 'unist-builder';
 import { beforeEach, describe, expect, test } from 'vitest';
 import Element from './element.svelte';
 describe('Element', () => {
@@ -7,13 +9,12 @@ describe('Element', () => {
     });
     const it = test.extend({
         props: {
-            node: {
-                type: 'element', tagName: 'div', properties: {}, children: [{ type: 'text', value: 'Hello, World!' }]
-            }
+            ast: u('element', { tagName: "div" }, [u('text', { value: 'Hello, World!' })]),
+            components: { element: Element }
         }
     });
     it('renders <div>Hello, World!</div>', ({ props }) => {
-        mount(Element, { props, target: document.body });
+        mount(Unist, { props, target: document.body });
         expect(document.body.innerHTML).toContain('<div>');
         expect(document.body.innerHTML).toContain('Hello, World!');
         expect(document.body.innerHTML).toContain('</div>');
