@@ -21,4 +21,19 @@ describe('Comment', () => {
 
         expect(document.body.innerHTML).toContain('<!-- Hello, World! -->');
     });
+
+    it('escapes --> to prevent XSS', () => {
+        const maliciousProps = {
+            ast: u('comment', { value: '--><script>alert("XSS")</script><!--' }),
+            components: { comment: Comment }
+        };
+
+        mount(Unist, { props: maliciousProps, target: document.body });
+
+        // Should escape --> to --&gt; preventing comment breakout
+        expect(document.body.innerHTML).toContain('--&gt;');
+        expect(document.body.innerHTML).not.toContain('--><script>');
+        // Script should not be executed/present as executable code
+        expect(document.querySelectorAll('script').length).toBe(0);
+    });
 });
