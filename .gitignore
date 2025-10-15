@@ -1,10 +1,9 @@
 .DS_Store
 .pnpm-store
 node_modules
-.pnpm-store
 .svelte-kit
 build
-dist/**/*.{spec,test}.*
+dist
 package
 .env
 .env.*
