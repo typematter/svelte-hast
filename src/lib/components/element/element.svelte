@@ -9,10 +9,16 @@
 	let { className, ...rest } = $derived(
 		(properties as Properties & { className?: string | null }) || {}
 	);
+
+	let hasContent = $derived(
+		(tagName === 'template' && content === undefined) || (children && children.length > 0)
+	);
 </script>
 
-<svelte:element this={tagName} class={className} {...rest}
-	>{#if tagName === 'template' && content}<Node
-			node={content}
-		/>{:else}{#each children as child}<Node node={child} />{/each}{/if}</svelte:element
->
+{#if hasContent}<svelte:element this={tagName} class={className} {...rest}
+		>{#if tagName === 'template' && content}<Node
+				node={content}
+			/>{:else if children}{#each children as child}<Node
+					node={child}
+				/>{/each}{/if}</svelte:element
+	>{:else}<svelte:element this={tagName} class={className} {...rest} />{/if}
