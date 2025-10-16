@@ -18,18 +18,22 @@ describe('Integration Tests', () => {
 				]),
 				u('element', { tagName: 'body' }, [
 					u('comment', { value: 'Main content' }),
-					u('element', {
-						tagName: 'div',
-						properties: { className: 'container', id: 'main' }
-					}, [
-						u('element', { tagName: 'h1' }, [u('text', { value: 'Welcome' })]),
-						u('element', { tagName: 'p' }, [
-							u('text', { value: 'This is a ' }),
-							u('element', { tagName: 'strong' }, [u('text', { value: 'test' })]),
-							u('text', { value: ' page.' })
-						]),
-						u('comment', { value: 'End of content' })
-					])
+					u(
+						'element',
+						{
+							tagName: 'div',
+							properties: { className: 'container', id: 'main' }
+						},
+						[
+							u('element', { tagName: 'h1' }, [u('text', { value: 'Welcome' })]),
+							u('element', { tagName: 'p' }, [
+								u('text', { value: 'This is a ' }),
+								u('element', { tagName: 'strong' }, [u('text', { value: 'test' })]),
+								u('text', { value: ' page.' })
+							]),
+							u('comment', { value: 'End of content' })
+						]
+					)
 				])
 			])
 		]);
@@ -58,15 +62,19 @@ describe('Integration Tests', () => {
 			u('element', { tagName: 'article' }, [
 				u('element', { tagName: 'header' }, [
 					u('element', { tagName: 'h2' }, [u('text', { value: 'Article Title' })]),
-					u('element', {
-						tagName: 'p',
-						properties: { className: 'meta' }
-					}, [
-						u('text', { value: 'By ' }),
-						u('element', { tagName: 'span' }, [u('text', { value: 'Author Name' })]),
-						u('text', { value: ' on ' }),
-						u('element', { tagName: 'time' }, [u('text', { value: '2025-10-15' })])
-					])
+					u(
+						'element',
+						{
+							tagName: 'p',
+							properties: { className: 'meta' }
+						},
+						[
+							u('text', { value: 'By ' }),
+							u('element', { tagName: 'span' }, [u('text', { value: 'Author Name' })]),
+							u('text', { value: ' on ' }),
+							u('element', { tagName: 'time' }, [u('text', { value: '2025-10-15' })])
+						]
+					)
 				]),
 				u('comment', { value: 'Article body starts here' }),
 				u('element', { tagName: 'section' }, [
@@ -74,10 +82,14 @@ describe('Integration Tests', () => {
 					u('element', { tagName: 'p' }, [u('text', { value: 'Second paragraph.' })])
 				]),
 				u('element', { tagName: 'footer' }, [
-					u('element', {
-						tagName: 'a',
-						properties: { href: '#comments', className: 'link' }
-					}, [u('text', { value: 'View Comments' })])
+					u(
+						'element',
+						{
+							tagName: 'a',
+							properties: { href: '#comments', className: 'link' }
+						},
+						[u('text', { value: 'View Comments' })]
+					)
 				])
 			])
 		]);
@@ -120,29 +132,37 @@ describe('Integration Tests', () => {
 
 	test('renders form with various input types', () => {
 		const ast = u('root', [
-			u('element', {
-				tagName: 'form',
-				properties: { action: '/submit', method: 'post' }
-			}, [
-				u('element', { tagName: 'label' }, [
-					u('text', { value: 'Name:' }),
-					u('element', {
-						tagName: 'input',
-						properties: { type: 'text', name: 'name', required: true }
-					})
-				]),
-				u('element', { tagName: 'label' }, [
-					u('text', { value: 'Email:' }),
-					u('element', {
-						tagName: 'input',
-						properties: { type: 'email', name: 'email' }
-					})
-				]),
-				u('element', {
-					tagName: 'button',
-					properties: { type: 'submit', className: 'btn-primary' }
-				}, [u('text', { value: 'Submit' })])
-			])
+			u(
+				'element',
+				{
+					tagName: 'form',
+					properties: { action: '/submit', method: 'post' }
+				},
+				[
+					u('element', { tagName: 'label' }, [
+						u('text', { value: 'Name:' }),
+						u('element', {
+							tagName: 'input',
+							properties: { type: 'text', name: 'name', required: true }
+						})
+					]),
+					u('element', { tagName: 'label' }, [
+						u('text', { value: 'Email:' }),
+						u('element', {
+							tagName: 'input',
+							properties: { type: 'email', name: 'email' }
+						})
+					]),
+					u(
+						'element',
+						{
+							tagName: 'button',
+							properties: { type: 'submit', className: 'btn-primary' }
+						},
+						[u('text', { value: 'Submit' })]
+					)
+				]
+			)
 		]);
 
 		mount(Unist, { props: { ast, components }, target: document.body });
@@ -180,27 +200,39 @@ describe('Integration Tests', () => {
 	test('handles complex nested structures with comments', () => {
 		const ast = u('root', [
 			u('comment', { value: 'Start of navigation' }),
-			u('element', {
-				tagName: 'nav',
-				properties: { className: 'main-nav' }
-			}, [
-				u('element', { tagName: 'ul' }, [
-					u('comment', { value: 'Home link' }),
-					u('element', { tagName: 'li' }, [
-						u('element', {
-							tagName: 'a',
-							properties: { href: '/' }
-						}, [u('text', { value: 'Home' })])
-					]),
-					u('comment', { value: 'About link' }),
-					u('element', { tagName: 'li' }, [
-						u('element', {
-							tagName: 'a',
-							properties: { href: '/about' }
-						}, [u('text', { value: 'About' })])
+			u(
+				'element',
+				{
+					tagName: 'nav',
+					properties: { className: 'main-nav' }
+				},
+				[
+					u('element', { tagName: 'ul' }, [
+						u('comment', { value: 'Home link' }),
+						u('element', { tagName: 'li' }, [
+							u(
+								'element',
+								{
+									tagName: 'a',
+									properties: { href: '/' }
+								},
+								[u('text', { value: 'Home' })]
+							)
+						]),
+						u('comment', { value: 'About link' }),
+						u('element', { tagName: 'li' }, [
+							u(
+								'element',
+								{
+									tagName: 'a',
+									properties: { href: '/about' }
+								},
+								[u('text', { value: 'About' })]
+							)
+						])
 					])
-				])
-			]),
+				]
+			),
 			u('comment', { value: 'End of navigation' })
 		]);
 

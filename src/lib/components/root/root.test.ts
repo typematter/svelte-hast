@@ -6,20 +6,20 @@ import { beforeEach, describe, expect, test } from 'vitest';
 import Root from './root.svelte';
 
 describe('Root', () => {
-    beforeEach(() => {
-        document.body = document.createElement('body');
-    });
+	beforeEach(() => {
+		document.body = document.createElement('body');
+	});
 
-    const it = test.extend<{ props: ComponentProps<typeof Unist> }>({
-        props: {
-            ast: u('root', [u('text', { value: 'Hello, World!' })]),
-            components: { root: Root }
-        }
-    });
+	const it = test.extend<{ props: ComponentProps<typeof Unist> }>({
+		props: {
+			ast: u('root', [u('text', { value: 'Hello, World!' })]),
+			components: { root: Root }
+		}
+	});
 
-    it('renders <div>Hello, World!</div>', ({ props }) => {
-        mount(Unist, { props, target: document.body });
+	it('renders <div>Hello, World!</div>', ({ props }) => {
+		mount(Unist, { props, target: document.body });
 
-        expect(document.body.innerHTML).toContain('Hello, World!');
-    });
+		expect(document.body.innerHTML).toContain('Hello, World!');
+	});
 });

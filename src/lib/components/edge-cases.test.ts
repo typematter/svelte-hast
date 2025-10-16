@@ -35,9 +35,7 @@ describe('Edge Cases', () => {
 		});
 
 		test('handles text with special characters', () => {
-			const ast = u('root', [
-				u('text', { value: '<script>alert("xss")</script>' })
-			]);
+			const ast = u('root', [u('text', { value: '<script>alert("xss")</script>' })]);
 
 			mount(Unist, { props: { ast, components }, target: document.body });
 			// Text should be escaped, not executed as HTML
@@ -46,18 +44,14 @@ describe('Edge Cases', () => {
 		});
 
 		test('handles text with HTML entities', () => {
-			const ast = u('root', [
-				u('text', { value: '&lt;div&gt;&amp;&quot;' })
-			]);
+			const ast = u('root', [u('text', { value: '&lt;div&gt;&amp;&quot;' })]);
 
 			mount(Unist, { props: { ast, components }, target: document.body });
 			expect(document.body.textContent).toBe('&lt;div&gt;&amp;&quot;');
 		});
 
 		test('handles text with newlines and whitespace', () => {
-			const ast = u('root', [
-				u('text', { value: 'Line 1\n  Line 2\t\tLine 3' })
-			]);
+			const ast = u('root', [u('text', { value: 'Line 1\n  Line 2\t\tLine 3' })]);
 
 			mount(Unist, { props: { ast, components }, target: document.body });
 			expect(document.body.textContent).toContain('\n');
@@ -67,9 +61,7 @@ describe('Edge Cases', () => {
 
 	describe('Element component edge cases', () => {
 		test('handles element with undefined properties', () => {
-			const ast = u('root', [
-				u('element', { tagName: 'div', properties: undefined })
-			]);
+			const ast = u('root', [u('element', { tagName: 'div', properties: undefined })]);
 
 			expect(() => {
 				mount(Unist, { props: { ast, components }, target: document.body });
@@ -80,9 +72,7 @@ describe('Edge Cases', () => {
 		});
 
 		test('handles element with null properties', () => {
-			const ast = u('root', [
-				u('element', { tagName: 'div', properties: null })
-			]);
+			const ast = u('root', [u('element', { tagName: 'div', properties: null })]);
 
 			expect(() => {
 				mount(Unist, { props: { ast, components }, target: document.body });
@@ -157,9 +147,7 @@ describe('Edge Cases', () => {
 		});
 
 		test('handles element with undefined children', () => {
-			const ast = u('root', [
-				u('element', { tagName: 'div', children: undefined })
-			]);
+			const ast = u('root', [u('element', { tagName: 'div', children: undefined })]);
 
 			expect(() => {
 				mount(Unist, { props: { ast, components }, target: document.body });
@@ -170,9 +158,7 @@ describe('Edge Cases', () => {
 		});
 
 		test('handles template element with undefined content', () => {
-			const ast = u('root', [
-				u('element', { tagName: 'template', content: undefined })
-			]);
+			const ast = u('root', [u('element', { tagName: 'template', content: undefined })]);
 
 			expect(() => {
 				mount(Unist, { props: { ast, components }, target: document.body });
@@ -225,9 +211,7 @@ describe('Edge Cases', () => {
 		});
 
 		test('handles comment with special characters', () => {
-			const ast = u('root', [
-				u('comment', { value: 'Test <>&"\' special chars' })
-			]);
+			const ast = u('root', [u('comment', { value: 'Test <>&"\' special chars' })]);
 
 			mount(Unist, { props: { ast, components }, target: document.body });
 			expect(document.body.innerHTML).toContain('Test <>&');

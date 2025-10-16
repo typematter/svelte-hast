@@ -5,20 +5,20 @@ import { beforeEach, describe, expect, test } from 'vitest';
 import Text from './text.svelte';
 
 describe('Text', () => {
-    beforeEach(() => {
-        document.body = document.createElement('body');
-    });
+	beforeEach(() => {
+		document.body = document.createElement('body');
+	});
 
-    const it = test.extend<{ props: ComponentProps<typeof Unist> }>({
-        props: {
-            ast: u('text', { value: 'Hello, World!' }),
-            components: { text: Text }
-        }
-    });
+	const it = test.extend<{ props: ComponentProps<typeof Unist> }>({
+		props: {
+			ast: u('text', { value: 'Hello, World!' }),
+			components: { text: Text }
+		}
+	});
 
-    it('renders Hello, World!', ({ props }) => {
-        mount(Unist, { props, target: document.body });
+	it('renders Hello, World!', ({ props }) => {
+		mount(Unist, { props, target: document.body });
 
-        expect(document.body.innerHTML).toContain('Hello, World!');
-    });
+		expect(document.body.innerHTML).toContain('Hello, World!');
+	});
 });

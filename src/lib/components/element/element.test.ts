@@ -151,9 +151,7 @@ describe('Element', () => {
 				content: u('root', [
 					u('element', { tagName: 'div' }, [u('text', { value: 'Template content' })])
 				]),
-				children: [
-					u('text', { value: 'This should not render' })
-				]
+				children: [u('text', { value: 'This should not render' })]
 			}),
 			components: { element: Element, text: Text, root: Root }
 		};
