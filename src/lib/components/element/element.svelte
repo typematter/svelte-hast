@@ -18,7 +18,7 @@
 {#if hasContent}<svelte:element this={tagName} class={className} {...rest}
 		>{#if tagName === 'template' && content}<Node
 				node={content}
-			/>{:else if children}{#each children as child}<Node
+			/>{:else if children}{#each children as child (child)}<Node
 					node={child}
 				/>{/each}{/if}</svelte:element
 	>{:else}<svelte:element this={tagName} class={className} {...rest} />{/if}
