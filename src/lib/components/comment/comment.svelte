@@ -6,4 +6,5 @@
 	let safeValue = $derived(value.replace(/-->/g, '--&gt;'));
 </script>
 
+<!-- eslint-disable-next-line svelte/no-at-html-tags-->
 {@html `<!-- ${safeValue} -->`}
