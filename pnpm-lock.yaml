@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@typematter/svelte-unist':
-        specifier: ^1.0.3
-        version: 1.0.3(@types/unist@3.0.3)(svelte@5.40.1)
+        specifier: ^1.0.4
+        version: 1.0.4(@types/unist@3.0.3)(svelte@5.40.1)
     devDependencies:
       '@eslint/compat':
         specifier: ^1.4.0
@@ -566,8 +566,8 @@ packages:
     resolution: {integrity: sha512-zIcONa+hVtVSSep9UT3jZ5rizo2BsxgyDYU7WFD5eICBE7no3881HGeb/QkGfsJs6JTkY1aQhT7rIPC7e+0nnA==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
 
-  '@typematter/svelte-unist@1.0.3':
-    resolution: {integrity: sha512-wyTgufwjQTl87ZeMcpx/m76Ma9eXpheJ4yOE8YiDFeGdOVEScQEIZ4I2ZpXI/tvUGB8dHwllhh6UG652jWRLMA==}
+  '@typematter/svelte-unist@1.0.4':
+    resolution: {integrity: sha512-LDoGvnNQQs0F1KVpFwDemGlZxA/pyI4UCwjlGpG07ysBEDDSpwZNmfPI2pSbNDyjiCJrDN291K9/KQ4Prolw5A==}
     peerDependencies:
       svelte: ^5.39.11
 
@@ -830,8 +830,8 @@ packages:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
     engines: {node: '>=0.10.0'}
 
-  devalue@5.4.0:
-    resolution: {integrity: sha512-n0h6iYbR4IyHe4SdGzm0yV0q4v1aD/maadVkjZC+wICyhWrf1fyNEJTaF7BhlDcKar46tCn5wIMRgTLrrPgmQQ==}
+  devalue@5.4.1:
+    resolution: {integrity: sha512-YtoaOfsqjbZQKGIMRYDWKjUmSB4VJ/RElB+bXZawQAQYAo4xu08GKTMVlsZDTF6R2MbAgjcAQRPI5eIyRAT2OQ==}
 
   dom-accessibility-api@0.6.3:
     resolution: {integrity: sha512-7ZgogeTnjuHbo+ct10G9Ffp0mif17idi0IyWNVA/wcwcm7NPOD/WEHVP3n7n3MhXqxoIYm8d6MuZohYWIZ4T3w==}
@@ -1927,7 +1927,7 @@ snapshots:
       '@types/cookie': 0.6.0
       acorn: 8.15.0
       cookie: 0.6.0
-      devalue: 5.4.0
+      devalue: 5.4.1
       esm-env: 1.2.2
       kleur: 4.1.5
       magic-string: 0.30.19
@@ -1979,7 +1979,7 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
 
-  '@typematter/svelte-unist@1.0.3(@types/unist@3.0.3)(svelte@5.40.1)':
+  '@typematter/svelte-unist@1.0.4(@types/unist@3.0.3)(svelte@5.40.1)':
     dependencies:
       '@accuser/unist-util-type-guards': 1.1.0(@types/unist@3.0.3)
       svelte: 5.40.1
@@ -2271,7 +2271,7 @@ snapshots:
 
   deepmerge@4.3.1: {}
 
-  devalue@5.4.0: {}
+  devalue@5.4.1: {}
 
   dom-accessibility-api@0.6.3: {}
 

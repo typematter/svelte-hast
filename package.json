@@ -81,6 +81,6 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
-		"@typematter/svelte-unist": "^1.0.3"
+		"@typematter/svelte-unist": "^1.0.4"
 	}
 }
